@@ -1,3 +1,7 @@
 import '../../lib.dart';
 
-class Forest extends Environment {}
+class Forest extends Environment {
+  String get icon {
+    return ' 🌳 ';
+  }
+}
