@@ -1,4 +1,19 @@
-A simple command-line application.
+// Scierie, fabrique, ...
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+// Bois, fer, ...
+
+// Foret, Mine,
+
+/*
+R1 ---> Usine1  \
+R2 ---> Usine2  -\--> Usine3  ---> City
+
+foret --> scierie --> planche
+mine de fer --> fabrique de clous  --> clous
+
+planche + clous  --> fabrique de meubles --> meuble
+
+meuble --> ville --> argent;
+
+*/
+
