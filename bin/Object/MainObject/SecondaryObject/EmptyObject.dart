@@ -5,6 +5,6 @@ class EmptyObject extends BaseObject {
     return ' ⚪ ';
   }
 
-  EmptyObject.withPosition(int x, int y) : super.withPosition(x, y, null);
+  EmptyObject.withPosition(int x, int y) : super.withPosition(x, y, []);
   EmptyObject() : super();
 }

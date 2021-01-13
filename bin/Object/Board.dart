@@ -23,8 +23,10 @@ class Board {
       }
       map += element.icon;
     });
-    map +=
-        "\n\n\n Vide ⚪ | Usine 🔥 | Forêt 🌳 | Maison 🏡 | Mine ⛏  | Scierie 🔪 \n\n";
+    if (Game().charlie == "1") {
+      map +=
+          "\n\n\n Vide ⚪ | Usine 🔥 | Forêt 🌳 | Maison 🏡 | Mine ⛏  | Scierie 🔪 \n\n";
+    }
     print(map);
   }
 
