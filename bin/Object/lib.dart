@@ -4,7 +4,6 @@ export 'Game.dart';
 export 'User.dart';
 
 export 'MainObject/Building.dart';
-export 'MainObject/City.dart';
 export 'MainObject/Environment.dart';
 export 'MainObject/Ressource.dart';
 export 'MainObject/SecondaryObject/EmptyObject.dart';

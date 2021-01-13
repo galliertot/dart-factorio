@@ -26,4 +26,9 @@ class Board {
     map += "\n\n\n";
     print(map);
   }
+
+  void replaceOnMap(int x, int y, BaseObject object) {
+    Game().map[(x) + (y * 10)] = object;
+    showMap();
+  }
 }
