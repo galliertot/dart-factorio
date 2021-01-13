@@ -77,8 +77,6 @@ class Game {
       map = List.generate(100, (index) => EmptyObject());
       xCharlie = Random().nextInt(9);
       yCharlie = Random().nextInt(9);
-      print(xCharlie);
-      print(yCharlie);
       while (!charlieIsFound) {
         if (Platform.isWindows) {
           print(Process.runSync("cls", [], runInShell: true).stdout);
@@ -90,6 +88,7 @@ class Game {
         turn += 1;
       }
     }
+    print("\n\nBravo ! Vous avez fini en ${turn}");
   }
 
   void askActionCharlie(int turn) {
@@ -156,12 +155,31 @@ class Game {
       print("\n\n\n");
       Board().replaceOnMap(x, y, object);
       Board().showMap();
-      print("\n\nBravo !");
     } else {
-      object = Cross.withPosition(x, y);
+      object = checkIfCharlieIsArround(x, y);
       print("\n\n\n");
       Board().replaceOnMap(x, y, object);
     }
+  }
+
+  Cross checkIfCharlieIsArround(int x, int y) {
+    for (int i = x - 1; i <= x + 1; i++) {
+      for (int j = y - 1; j <= y + 1; j++) {
+        if (i == xCharlie && j == yCharlie) {
+          return Cross.withPosition(x, y, CrossType.almost);
+        }
+      }
+    }
+
+    for (int i = x - 2; i <= x + 2; i++) {
+      for (int j = y - 2; j <= y + 2; j++) {
+        if (i == xCharlie && j == yCharlie) {
+          return Cross.withPosition(x, y, CrossType.around);
+        }
+      }
+    }
+
+    return Cross.withPosition(x, y, CrossType.none);
   }
 
   void makeAction(int action, int x, int y) {
