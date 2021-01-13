@@ -24,7 +24,7 @@ class Board {
       map += element.icon;
     });
     map +=
-        "\n\n Vide ⚪ | Usine 🔥 | Forêt 🌳 |  Maison 🏡 | Mine ⛏ |  Scierie 🔪 \n\n\n";
+        "\n\n\n Vide ⚪ | Usine 🔥 | Forêt 🌳 | Maison 🏡 | Mine ⛏  | Scierie 🔪 \n\n";
     print(map);
   }
 
