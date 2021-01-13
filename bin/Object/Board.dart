@@ -23,12 +23,12 @@ class Board {
       }
       map += element.icon;
     });
-    map += "\n\n\n";
+    map +=
+        "\n\n Vide ⚪ | Usine 🔥 | Forêt 🌳 |  Maison 🏡 | Mine ⛏ |  Scierie 🔪 \n\n\n";
     print(map);
   }
 
   void replaceOnMap(int x, int y, BaseObject object) {
     Game().map[(x * 10) + (y)] = object;
-    showMap();
   }
 }

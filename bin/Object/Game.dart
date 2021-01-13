@@ -43,9 +43,9 @@ class Game {
     print("C'est parti ${User().name} ! \n\n\n");
     map = List.generate(
         100, (index) => randomObject(index % 10, (index / 10).toInt()));
-    Board().showMap();
     int turn = 1;
     while (true) {
+      Board().showMap();
       User().gainRessource();
       print(User().toString());
       askAction(turn);
@@ -56,7 +56,7 @@ class Game {
   void askAction(int turn) {
     print("Tour n°${turn}: que voulez-vous faire ?\n");
     print(
-        "1 : Créer une usine (2 fers, 2 metals, 1 bois, 1 bronze) \n2 : Créer une maison (3 bois, 2 plastiques, 1 fer) \n3 : Créer une scierie (2 bois, 2 fers, 1 bronze, 1 metal) \n");
+        "1 : Créer une usine (2 fers, 2 metals, 1 bois, 1 bronze) \n2 : Créer une maison (3 bois, 2 plastiques, 1 fer) \n3 : Créer une scierie (2 bois, 2 fers, 1 bronze, 1 metal) \n4 : Passer le tour");
     var action;
     do {
       if (action != null && !_isNumeric(action)) {
@@ -64,23 +64,25 @@ class Game {
       }
       action = stdin.readLineSync();
     } while (!_isNumeric(action));
-    var x;
-    var y;
-    print("\nSur quelle coordonée X ?");
-    do {
-      if (x != null && !_isNumeric(x)) {
-        print("Veuillez saisir une coordonée X valide");
-      }
-      x = stdin.readLineSync();
-    } while (!_isNumeric(x));
-    print("\nSur quelle coordonée Y ?");
-    do {
-      if (y != null && !_isNumeric(y)) {
-        print("Veuillez saisir une coordonée Y valide");
-      }
-      y = stdin.readLineSync();
-    } while (!_isNumeric(y));
-    makeAction(int.parse(action), int.parse(x), int.parse(y));
+    if (action != "4") {
+      var x;
+      var y;
+      print("\nSur quelle coordonée X ?");
+      do {
+        if (x != null && !_isNumeric(x)) {
+          print("Veuillez saisir une coordonée X valide");
+        }
+        x = stdin.readLineSync();
+      } while (!_isNumeric(x));
+      print("\nSur quelle coordonée Y ?");
+      do {
+        if (y != null && !_isNumeric(y)) {
+          print("Veuillez saisir une coordonée Y valide");
+        }
+        y = stdin.readLineSync();
+      } while (!_isNumeric(y));
+      makeAction(int.parse(action), int.parse(x), int.parse(y));
+    }
   }
 
   void makeAction(int action, int x, int y) {
