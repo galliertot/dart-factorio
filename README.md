@@ -1,4 +1,6 @@
 # Le futur Sims City  
-![alt text](https://i.ibb.co/B3xcscs/Capture-d-cran-2021-01-12-17-24-46.png)
-
 ## Et oui, vous ne revez pas !
+### C'est carré 
+
+![alt text](https://i.ibb.co/jD00xqQ/Capture-d-cran-2021-01-13-12-12-44.png)
+
