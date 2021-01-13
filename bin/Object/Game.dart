@@ -44,20 +44,19 @@ class Game {
     map = List.generate(
         100, (index) => randomObject(index % 10, (index / 10).toInt()));
     Board().showMap();
-    print(User().toString());
     int turn = 1;
     while (true) {
-      // updatables.forEach((element) {
-      //   element.update();
-      // });
+      User().gainRessource();
+      print(User().toString());
       askAction(turn);
       turn += 1;
     }
   }
 
   void askAction(int turn) {
-    print("Tour n°${turn}: que voulez-vous faire ?");
-    print("1 : Créer une usine | 2 : Créer une maison | 3 : Créer une scierie");
+    print("Tour n°${turn}: que voulez-vous faire ?\n");
+    print(
+        "1 : Créer une usine (2 fers, 2 metals, 1 bois, 1 bronze) \n2 : Créer une maison (3 bois, 2 plastiques, 1 fer) \n3 : Créer une scierie (2 bois, 2 fers, 1 bronze, 1 metal) \n");
     var action;
     do {
       if (action != null && !_isNumeric(action)) {
@@ -67,14 +66,14 @@ class Game {
     } while (!_isNumeric(action));
     var x;
     var y;
-    print("Sur quelle coordonée X ?");
+    print("\nSur quelle coordonée X ?");
     do {
       if (x != null && !_isNumeric(x)) {
         print("Veuillez saisir une coordonée X valide");
       }
       x = stdin.readLineSync();
     } while (!_isNumeric(x));
-    print("Sur quelle coordonée Y ?");
+    print("\nSur quelle coordonée Y ?");
     do {
       if (y != null && !_isNumeric(y)) {
         print("Veuillez saisir une coordonée Y valide");
@@ -99,12 +98,7 @@ class Game {
       default:
         break;
     }
-    if (Platform.isWindows) {
-      print(Process.runSync("cls", [], runInShell: true).stdout);
-    } else {
-      print(Process.runSync("clear", [], runInShell: true).stdout);
-    }
-    print("\x1B[2J\x1B[0;0H");
+    print("\n\n\n");
     Board().replaceOnMap(x, y, object);
   }
 

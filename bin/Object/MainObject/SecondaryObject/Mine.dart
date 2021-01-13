@@ -5,6 +5,6 @@ class Mine extends Environment {
     return ' ⛏  ';
   }
 
-  Mine.withPosition(int x, int y) : super.withPosition(x, y);
+  Mine.withPosition(int x, int y) : super.withPosition(x, y, null);
   Mine() : super();
 }

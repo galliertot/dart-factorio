@@ -5,6 +5,6 @@ class Forest extends Environment {
     return ' 🌳 ';
   }
 
-  Forest.withPosition(int x, int y) : super.withPosition(x, y);
+  Forest.withPosition(int x, int y) : super.withPosition(x, y, null);
   Forest() : super();
 }

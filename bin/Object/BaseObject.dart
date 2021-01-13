@@ -6,11 +6,12 @@ class BaseObject implements UpdateGame {
   int x;
   int y;
 
-  BaseObject.withPosition(int x, int y) {
+  BaseObject.withPosition(int x, int y, List<Ressource> cost) {
     this.created_at = DateTime.now();
     this.icon = null;
     this.x = x;
     this.y = y;
+    User().removeRessource(cost);
   }
 
   BaseObject() {
