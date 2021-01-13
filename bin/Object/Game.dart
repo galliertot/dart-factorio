@@ -45,6 +45,11 @@ class Game {
         100, (index) => randomObject(index % 10, (index / 10).toInt()));
     int turn = 1;
     while (true) {
+      if (Platform.isWindows) {
+        print(Process.runSync("cls", [], runInShell: true).stdout);
+      } else {
+        print(Process.runSync("clear", [], runInShell: true).stdout);
+      }
       Board().showMap();
       User().gainRessource();
       print(User().toString());
@@ -82,6 +87,8 @@ class Game {
         y = stdin.readLineSync();
       } while (!_isNumeric(y));
       makeAction(int.parse(action), int.parse(x), int.parse(y));
+    } else {
+      print("\n\n");
     }
   }
 
