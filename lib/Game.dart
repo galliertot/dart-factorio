@@ -88,11 +88,11 @@ class Game {
         turn += 1;
       }
     }
-    print("\n\nBravo ! Vous avez fini en ${turn}");
+    print("\n\nBravo ! Vous avez fini en ${turn} tours");
   }
 
   void askActionCharlie(int turn) {
-    print("Tour n°${turn}\n");
+    print("\n\nTour n°${turn}");
     var x;
     var y;
     print("\nSur quelle coordonée X ?");

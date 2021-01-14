@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'Object/lib.dart';
+import '../lib/lib.dart';
 
 void main(List<String> arguments) {
   if (Platform.isWindows) {
